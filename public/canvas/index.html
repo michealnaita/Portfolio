@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+  </head>
+  <body>
+    <canvas></canvas>
+    <script>
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.width = window.innerWidth;
+      ctx.height = window.innerHeight;
+      ctx.strokeStyle = "red";
+      ctx.beginPath();
+      ctx.moveTo(50, 50);
+      ctx.lineTo(100, 100);
+      ctx.stroke();
+      //   ctx.fillRect(0, 0, 150, 60);
+    </script>
+  </body>
+</html>
