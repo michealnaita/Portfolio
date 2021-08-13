@@ -51,8 +51,11 @@ h3 {
     }
   }
 }
+.disable {
+  pointer-events: none;
+}
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Press+Start+2P&display=swap");
-.animal {
+.anima {
   transition: 0.1s ease;
   color: inherit;
   cursor: default;
@@ -156,7 +159,9 @@ h3 {
 }
 .reveal-container {
   display: inline-block;
-  height: calc(max-content - 30px);
   overflow: hidden;
   color: inherit;
+  .reveal {
+    // display: inline-block;
+  }
 }

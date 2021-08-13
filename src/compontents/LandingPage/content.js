@@ -9,7 +9,6 @@ export default function LandingPageContent() {
   let greetingIndex = 0;
   function changeGreeting() {
     setTimeout(() => changeGreeting(), 5000);
-    let change = true;
     const greetings = ["Hello", "Gyebaleko", "Bonjour", "Hallo", "你好"];
     setGreeting(greetings[greetingIndex]);
     if (greetingIndex === greetings.length - 1) return (greetingIndex = 0);
@@ -25,7 +24,8 @@ export default function LandingPageContent() {
   return (
     <Content ref={(el) => (contentRef = el)} className="pin">
       <div className="reveal-container">
-        <h1 className="greeting reveal">{greeting}!</h1>
+        {/* <h1 className="greeting reveal">{greeting}!</h1> */}
+        <h1 className="greeting reveal">HI :)</h1>
       </div>
       <h2 className="description">
         <div className="reveal-container">
@@ -37,24 +37,40 @@ export default function LandingPageContent() {
         </div>
         <br />
         <div className=" reveal-container">
-          <span className="typography reveal">
+          <div className="typography reveal">
             a freelance front-end engineer.
-          </span>
+          </div>
         </div>
       </h2>
       <div className="reveal-container">
-        <Button className="landing-cta reveal">résumé</Button>
+        <Button className="reveal">résumé</Button>
       </div>
     </Content>
   );
 }
 
 const Content = styled.div`
+  min-width: max-content;
   .greeting {
     margin-bottom: 24px;
     font-size: 63px;
     color: #fff;
     font-weight: 400;
+    //animation: smoothChange 5s ease-in-out infinite;
+    @keyframes smoothChange {
+      0% {
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
   }
   .description {
     font-size: 32px;
@@ -80,11 +96,8 @@ const Button = styled.button`
   cursor: pointer;
   position: relative;
   z-index: 2;
-  /* transition: 0.2s ease-in; */
   border: 1px solid #ffb500;
   border-color: transparent;
-  /* transition: all 0.2s ease; */
-  /* opacity: 0; */
   &:hove {
     border-color: #ffb500;
     background-color: transparent;

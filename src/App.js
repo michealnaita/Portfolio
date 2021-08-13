@@ -6,6 +6,8 @@ import styled, { css } from "styled-components";
 import About from "./compontents/About";
 import Projects from "./compontents/Projects";
 import { Element } from "react-scroll";
+import { useEffect, useRef } from "react";
+import { revealTextOnScroll } from "./compontents/LandingPage/animate";
 
 function App() {
   return (
@@ -28,9 +30,13 @@ function App() {
 }
 
 function Page({ pageName, children, align, name }) {
+  let elem = useRef(null);
+  useEffect(() => {
+    revealTextOnScroll(elem);
+  }, []);
   return (
     <Div align={align} name={name}>
-      <div className="page-title">
+      <div className="page-title" ref={(el) => (elem = el)}>
         <h1>&lt;{pageName || "Page"} /&gt;</h1>
       </div>
       <div className="page-content">{children}</div>
@@ -39,6 +45,7 @@ function Page({ pageName, children, align, name }) {
 }
 const Div = styled(Element)`
   padding: 130px 0;
+  padding-bottom: 0;
   max-width: 1641px;
   position: relative;
   margin: 0 auto;
