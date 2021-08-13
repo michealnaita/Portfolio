@@ -42,12 +42,12 @@ export default function AboutPage() {
           </Content>
         </About>
       </section>
-      <MarqueeCont />
+      <MarqueeContainer />
     </div>
   );
 }
 
-function MarqueeCont() {
+function MarqueeContainer() {
   return (
     <Marquee
       gradientColor={[10, 9, 8]}
@@ -55,12 +55,12 @@ function MarqueeCont() {
       className="marquee"
       speed={30}
     >
-      <img src="assets/icons/mysql.svg" />
-      <img src="assets/icons/node.svg" />
-      <img src="assets/icons/html.svg" />
-      <img src="assets/icons/ui.svg" />
-      <img src="assets/icons/react.svg" />
-      <img src="assets/icons/css.svg" />
+      <img src="assets/icons/mysql.svg" alt="" className="tech-img" />
+      <img src="assets/icons/node.svg" alt="" className="tech-img" />
+      <img src="assets/icons/html.svg" alt="" className="tech-img" />
+      <img src="assets/icons/ui.svg" alt="" className="tech-img" />
+      <img src="assets/icons/react.svg" alt="" className="tech-img" />
+      <img src="assets/icons/css.svg" alt="" className="tech-img" />
     </Marquee>
   );
 }

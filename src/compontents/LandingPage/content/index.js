@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { initTypography } from "../../../utils/typography.js";
 
-export default function () {
+export default function Index() {
   const [greeting, setGreeting] = useState("Hello");
   let greetingIndex = 0;
   function changeGreeting() {
@@ -38,6 +38,7 @@ const Content = styled.div`
     font-size: 63px;
     color: #fff;
     font-weight: 400;
+    font-weight: 500;
   }
   .description {
     font-size: 32px;

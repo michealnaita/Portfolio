@@ -14,7 +14,7 @@ export default function Project({ active }) {
           working with Firebase, Mysql, HTML and CS
         </p>
       </div>
-      <Button>case study</Button>
+      <Button>details</Button>
     </ProjectWrapper>
   );
 }

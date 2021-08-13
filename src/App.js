@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Landing from "./compontents/LandingPage";
 import Navigation from "./compontents/Navigation";
 import Footer from "./compontents/Footer";
@@ -10,25 +10,52 @@ import { useEffect, useRef } from "react";
 import { revealTextOnScroll } from "./compontents/LandingPage/animate";
 
 function App() {
+  const scrollbar_ref = useRef();
+  function animateScroll() {
+    const scrollPercentage =
+      (100 / (document.documentElement.scrollHeight - window.innerHeight)) *
+      window.scrollY;
+    scrollbar_ref.current.style.width = `${scrollPercentage}%`;
+  }
+  useEffect(() => {
+    if (scrollbar_ref.current) {
+      window.addEventListener("scroll", animateScroll);
+    }
+    return () => {
+      window.removeEventListener("scroll", animateScroll);
+    };
+  }, []);
   return (
-    <div className="App">
-      <Navigation />
-      <Element name="landing">
-        <Landing />
-      </Element>
-      <Page pageName="About" align="left" name="about">
-        <About />
-      </Page>
-      <Page pageName="Projects" align="right" name="projects">
-        <Projects />
-      </Page>
-      <Page pageName="Contact" align="left" name="contact">
-        <Footer />
-      </Page>
-    </div>
+    <>
+      <ScrollBar ref={scrollbar_ref} />
+      <div className="App">
+        <Navigation />
+        <Element name="landing">
+          <Landing />
+        </Element>
+        <Page pageName="About" align="left" name="about">
+          <About />
+        </Page>
+        <Page pageName="Projects" align="right" name="projects">
+          <Projects />
+        </Page>
+        <Page pageName="Contact" align="left" name="contact">
+          <Footer />
+        </Page>
+      </div>
+    </>
   );
 }
 
+const ScrollBar = styled.div`
+  width: 0%;
+  height: 1px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ff5964;
+  z-index: 5;
+`;
 function Page({ pageName, children, align, name }) {
   let elem = useRef(null);
   useEffect(() => {
@@ -50,9 +77,6 @@ const Div = styled(Element)`
   position: relative;
   margin: 0 auto;
   z-index: 1;
-  @media (max-width: 1641px) {
-    margin: 0 24px;
-  }
   .page-title {
     position: absolute;
     ${({ align }) =>
@@ -68,6 +92,19 @@ const Div = styled(Element)`
       font-style: italic;
       font-size: 100px;
       color: #222221;
+    }
+  }
+  @media (max-width: 1641px) {
+    max-width: 100%;
+    margin: 0;
+    padding: 130px 24px;
+    padding-bottom: 0;
+  }
+  @media (max-width: 748px) {
+    .page-title {
+      h1 {
+        font-size: 40px;
+      }
     }
   }
 `;

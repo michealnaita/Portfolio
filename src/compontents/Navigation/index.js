@@ -12,7 +12,7 @@ export default function Navigation(props) {
   let link2 = useRef(null);
   let link3 = useRef(null);
   const [active, setActive] = useState("");
-  const toggleNav = () => setNavToggled(!navToggled);
+  const toggleNav = (bool) => setNavToggled(bool || !navToggled);
   useEffect(() => {
     if (navToggled === true) {
       setFirstToggle(animateLinks([link3, link2, link1]));
@@ -24,12 +24,13 @@ export default function Navigation(props) {
   }, []);
   return (
     <NavWrapper>
-      <Nav>
+      <Nav navToggled={navToggled}>
         <Link
           to="landing"
           smooth={true}
           spy={true}
           onSetActive={() => setActive("")}
+          className="logo"
         >
           <img src="assets/images/logo.png" alt="logo" />
         </Link>
@@ -37,7 +38,6 @@ export default function Navigation(props) {
           <ul className={classes("page-links", { show: navToggled })}>
             <li
               ref={(el) => (link1 = el)}
-              onClick={() => setActive("about")}
               className={classes("link", { active: active === "about" })}
             >
               <Link
@@ -46,7 +46,9 @@ export default function Navigation(props) {
                 spy={true}
                 onSetActive={() => setActive("about")}
               >
-                <p className="text">about</p>
+                <p className="text" onClick={() => toggleNav(false)}>
+                  about
+                </p>
               </Link>
             </li>
             <li
@@ -59,7 +61,9 @@ export default function Navigation(props) {
                 onSetActive={() => setActive("projects")}
                 spy={true}
               >
-                <p className="text">projects</p>
+                <p className="text" onClick={() => toggleNav(false)}>
+                  projects
+                </p>
               </Link>
             </li>
             <li
@@ -71,8 +75,11 @@ export default function Navigation(props) {
                 smooth={true}
                 spy={true}
                 onSetActive={() => setActive("contact")}
+                offset={-100}
               >
-                <p className="text">contact</p>
+                <p className="text" onClick={() => toggleNav(false)}>
+                  contact
+                </p>
               </Link>
             </li>
           </ul>

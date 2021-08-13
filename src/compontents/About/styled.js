@@ -51,5 +51,14 @@ export const Content = styled.div`
 export const About = styled.div`
   width: max-content;
   margin-left: auto;
+  @media (max-width: 748px) {
+    width: 100%;
+    ${Content} {
+      max-width: 100%;
+    }
+    .tech-img {
+      width: 50px !important;
+    }
+  }
 `;
 export const AboutWrapper = styled.section``;

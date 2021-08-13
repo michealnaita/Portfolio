@@ -8,6 +8,7 @@ export const MenuButton = styled.div`
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  z-index: 10;
   &:after,
   &:before {
     display: block;
@@ -49,8 +50,12 @@ export const NavWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 10;
+  .logo {
+    z-index: 10;
+  }
 `;
 export const Nav = styled.div`
+  /* background-color: rgba(255, 255, 255, 0.5); */
   margin: auto;
   padding: 10px 0;
   max-width: 1641px;
@@ -62,6 +67,7 @@ export const Nav = styled.div`
   }
   .nav-right {
     display: flex;
+
     .page-links {
       margin-right: 115px;
       display: flex;
@@ -70,6 +76,7 @@ export const Nav = styled.div`
         opacity: 1;
       } */
       .link {
+        pointer-events: ${({ navToggled }) => (navToggled ? "all" : "none")};
         cursor: pointer;
         opacity: 0;
         transform: translateX(120px);
@@ -123,6 +130,27 @@ export const Nav = styled.div`
         }
         p {
           padding: 0 4px 0 4px;
+        }
+      }
+    }
+    @media (max-width: 622px) {
+      .page-links {
+        opacity: 0;
+        pointer-events: ${({ navToggled }) => (navToggled ? "all" : "none")};
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        background-color: #0a0908;
+        justify-content: center;
+        align-items: center;
+        .link {
+          margin: 24px;
+          p {
+            font-size: 40px;
+          }
         }
       }
     }

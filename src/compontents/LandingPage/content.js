@@ -20,12 +20,17 @@ export default function LandingPageContent() {
     revealText(contentRef);
     pin(contentRef);
   }, []);
-  console.log(contentRef);
+  // console.log(contentRef);
   return (
     <Content ref={(el) => (contentRef = el)} className="pin">
       <div className="reveal-container">
         {/* <h1 className="greeting reveal">{greeting}!</h1> */}
-        <h1 className="greeting reveal">HI :)</h1>
+        <h1 className="greeting reveal">
+          Hi{" "}
+          <span role="img" aria-label="waving hand">
+            👋🏿
+          </span>
+        </h1>
       </div>
       <h2 className="description">
         <div className="reveal-container">
@@ -55,7 +60,7 @@ const Content = styled.div`
     margin-bottom: 24px;
     font-size: 63px;
     color: #fff;
-    font-weight: 400;
+    font-weight: 500;
     //animation: smoothChange 5s ease-in-out infinite;
     @keyframes smoothChange {
       0% {
@@ -81,6 +86,10 @@ const Content = styled.div`
       font-weight: 400;
       color: #ff5964 !important;
     }
+  }
+  @media (max-width: 581px) {
+    min-width: 100px;
+    max-width: 350px;
   }
 `;
 const Button = styled.button`

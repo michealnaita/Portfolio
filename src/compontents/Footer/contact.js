@@ -1,8 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-export default function () {
+export default function ConatctContainer() {
+  console.log();
   return (
-    <ContactForm>
+    <ContactForm
+      action="https://formsubmit.co/michealnaita@gmail.com"
+      method="POST"
+    >
+      <input type="hidden" name="_captcha" value="false"></input>
+      <input type="hidden" name="_subject" value="Contact submission!"></input>
+      <input type="hidden" name="_next" value={window.location.href}></input>
+      <input type="hidden" name="_autoresponse" value="your custom message" />
       <h2>let's work together on your next project.</h2>
       <div className="form-group">
         <label htmlFor="name">name</label>
@@ -19,7 +27,7 @@ export default function () {
       <Button>
         <div>
           <span>send</span>
-          <img src="assets/icons/arrow-right.svg" />
+          <img src="assets/icons/arrow-right.svg" alt="" />
         </div>
       </Button>
     </ContactForm>
@@ -58,6 +66,9 @@ const ContactForm = styled.form`
         border-color: white;
       }
     }
+  }
+  @media (max-width: 600px) {
+    max-width: 100%;
   }
 `;
 const Button = styled.button`

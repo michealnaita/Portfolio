@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Code+Pro:wght@500;600;700&display=swap");
+:root {
+  --padding-sm: 24px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,21 +10,20 @@
   -moz-osx-font-smoothing: grayscale;
   color: white;
 }
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  &::-webkit-scrollbar {
+    width: 5px;
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffb500;
+  }
 }
-/* montserrat-regular - latin */
-/* @font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/montserrat-v15-latin-regular.eot'); 
-  src: local(''),
-       url('fonts/montserrat-v15-latin-regular.eot?#iefix') format('embedded-opentype'),
-       url('fonts/montserrat-v15-latin-regular.woff2') format('woff2'),
-       url('fonts/montserrat-v15-latin-regular.woff') format('woff'),
-       url('fonts/montserrat-v15-latin-regular.ttf') format('truetype'), 
-       url('fonts/montserrat-v15-latin-regular.svg#Montserrat') format('svg'); 
-} */
 p {
   font-size: 16px;
 }
@@ -28,8 +31,15 @@ ul {
   list-style: none;
 }
 section {
-  max-width: 1361px;
+  width: 1361px;
   margin: 0 auto;
+}
+@media only screen and (max-width: 1361px) {
+  section {
+    width: 100%;
+    margin: 0;
+    // padding: 0 24px;
+  }
 }
 
 h1 {

@@ -3,6 +3,7 @@ export const Footer = styled.footer`
   text-align: left;
   .footer-logo {
     margin-bottom: 24px;
+    /* width: 30px; */
   }
   .middle-content {
     display: flex;
@@ -27,6 +28,18 @@ export const Footer = styled.footer`
       cursor: pointer;
       &:hover {
         transform: scale(1.05);
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-logo {
+      display: none;
+    }
+    .middle-content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      .address {
       }
     }
   }
