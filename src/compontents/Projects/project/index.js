@@ -1,20 +1,17 @@
 import React from "react";
 import { ProjectWrapper, Button } from "./styled";
 
-export default function Project({ active }) {
+export default function Project({ content }) {
   return (
-    <ProjectWrapper active={active}>
-      <div className="project-image"></div>
-      <div className="project-content">
-        <h2>Project No.1</h2>
-        <p>
-          I am a Front End developer with experience building websites and web
-          applications. I specialize in JavaScript and have professional
-          experience working with React.js and Node.js. I also have experience
-          working with Firebase, Mysql, HTML and CS
-        </p>
+    <ProjectWrapper>
+      <div className="project-image">
+        <img width="100%" height="100%" src={content.image} alt="" />
       </div>
-      <Button>details</Button>
+      <div className="project-content">
+        <h2>{content.name}</h2>
+        <p>{content.description}</p>
+      </div>
+      <Button href={content.link}>demo</Button>
     </ProjectWrapper>
   );
 }

@@ -42,13 +42,16 @@ export default function LandingPageContent() {
         </div>
         <br />
         <div className=" reveal-container">
-          <div className="typography reveal">
-            a freelance front-end engineer.
-          </div>
+          <div className="typography reveal">a Front-end Web engineer.</div>
         </div>
       </h2>
       <div className="reveal-container">
-        <Button className="reveal">résumé</Button>
+        <Button
+          className="reveal"
+          href="https://drive.google.com/file/d/1JqGMm-qJi_mPZeF7V7uXihihjr1ixSW-/view?usp=sharing"
+        >
+          résumé
+        </Button>
       </div>
     </Content>
   );
@@ -92,7 +95,7 @@ const Content = styled.div`
     max-width: 350px;
   }
 `;
-const Button = styled.button`
+const Button = styled.a`
   margin-top: 48px;
   width: 170px;
   height: 48px;
@@ -107,6 +110,10 @@ const Button = styled.button`
   z-index: 2;
   border: 1px solid #ffb500;
   border-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   &:hove {
     border-color: #ffb500;
     background-color: transparent;

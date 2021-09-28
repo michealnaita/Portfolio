@@ -83,7 +83,7 @@ export const ProjectWrapper = styled.div`
     }
   } */
 `;
-export const Button = styled.button`
+export const Button = styled.a`
   display: block;
   background: none;
   outline: none;
@@ -92,4 +92,5 @@ export const Button = styled.button`
   border: none;
   margin-left: auto;
   cursor: pointer;
+  text-decoration: none;
 `;

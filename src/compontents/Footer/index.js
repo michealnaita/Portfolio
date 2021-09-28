@@ -18,12 +18,16 @@ export default function index() {
           </div>
         </div>
         <div className="footer-links">
-          <img
-            src="assets/icons/linkedin.svg"
-            alt="linkedin icon"
-            width="25px"
-          />
-          <img src="assets/icons/github.svg" alt="github icon" width="25px" />
+          <a href="http://linkedin.com/in/michealnaita">
+            <img
+              src="assets/icons/linkedin.svg"
+              alt="linkedin icon"
+              width="25px"
+            />
+          </a>
+          <a href="https://github.com/michealnaita">
+            <img src="assets/icons/github.svg" alt="github icon" width="25px" />
+          </a>
         </div>
       </section>
     </Footer>

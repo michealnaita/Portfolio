@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Apartments Browser",
+    "description": "This is a frealance project i worked for pixelinegroup to showcase apartments and VR, I created the website in React, Redux MapBox Api and Firebase ",
+    "link": "https://pixeline-apartments.netlify.app/search?area=kampala",
+    "image": "/assets/images/apartments.png"
+  },
+  {
+    "name": "Drawing App",
+    "description": "A drawing app i deceided to create while i ventured Typescript and Html canvas API. I created the webiste using React, Redux and styled components in  Typescript ",
+    "link": "https://micheal-whiteboard.netlify.app/",
+    "image": "/assets/images/whiteboard.png"
+  },
+  {
+    "name": "Portfolio",
+    "description": "My portfolio website to showcase my projects and skills I have aquired over the years of my experience",
+    "link": "michealnaita.com",
+    "image": "/assets/images/portfolio.png"
+  }
+]

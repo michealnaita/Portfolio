@@ -11,23 +11,26 @@ export default function AboutPage() {
           <h1>Who am I?</h1>
           <Content>
             <p className="content">
-              I am a Front End developer with experience building websites and
-              web applications. I specialize in JavaScript and have professional
-              experience working with React.js and Node.js. I also have
-              experience working with Firebase, Mysql, HTML and CSS
+              I am a Front-end Web engineer based in Uganda with experience
+              building websites and web applications. I specialize in JavaScript
+              and have professional experience working with React.js and
+              Node.js. I also have experience working with Firebase, Mysql, HTML
+              and CSS
               {showMore ? (
                 <p>
-                  <h3>What is Lorem Ipsum?</h3>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+                  <br />
+                  <h3>More about me?</h3>
+                  Over the past months, I have worked on various projects
+                  through freelance work and personal projects with that
+                  experience, I believe that I can hack my way around
+                  complicated user interfaces and tasks that require
+                  problem-solving to build beautiful user interfaces
+                  <br />
+                  <br />
+                  I’m excited about learning how to better my skills and new
+                  conventions used in the industry for overall self-improvement,
+                  That is why for every project that I work on I look at it as
+                  an opportunity to learn or implement something new.
                 </p>
               ) : null}
               <span>

@@ -1,13 +1,14 @@
 import React from "react";
 import Project from "./project";
 import { ProjectsContainer } from "./styled";
+import projects from "./projects.json";
 
 export default function Pojects() {
   return (
     <ProjectsContainer>
-      <Project />
-      <Project active />
-      <Project />
+      {projects.map((project, i) => (
+        <Project key={i} content={project} />
+      ))}
     </ProjectsContainer>
   );
 }

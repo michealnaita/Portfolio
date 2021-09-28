@@ -14,15 +14,27 @@ export default function ConatctContainer() {
       <h2>let's work together on your next project.</h2>
       <div className="form-group">
         <label htmlFor="name">name</label>
-        <input id="name" type="text" name="name" autoComplete="off" />
+        <input id="name" type="text" name="name" autoComplete="off" required />
       </div>
       <div className="form-group">
         <label htmlFor="email">email</label>
-        <input id="email" type="text" name="email" autoComplete="off" />
+        <input
+          id="email"
+          type="text"
+          name="email"
+          autoComplete="off"
+          required
+        />
       </div>
       <div className="form-group">
         <label htmlFor="message">message</label>
-        <textarea id="message" type="text" name="message" autoComplete="off" />
+        <textarea
+          id="message"
+          type="text"
+          name="message"
+          autoComplete="off"
+          required
+        />
       </div>
       <Button>
         <div>
